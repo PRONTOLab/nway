@@ -159,7 +159,7 @@ def crossproduct(radectables, err, logger, pairwise_errs=[]):
 	# now combine within buckets
 	logger.log('matching: collecting from %d buckets, creating cartesian products ...' % len(buckets))
 	#print('matching: %6d matches expected after hashing' % numpy.sum([
-	#	len(lists[0]) * numpy.product([len(li) + 1 for li in lists[1:]]) 
+	#	len(lists[0]) * numpy.prod([len(li) + 1 for li in lists[1:]]) 
 	#		for lists in buckets.values()]))
 	
 	#pbar = logger.progress(ndigits=5, maxval=len(buckets)).start()
@@ -233,7 +233,7 @@ def match_multiple(tables, table_names, err, fits_formats, logger, circular=True
 	"""
 	logger.log('')
 	logger.log('matching with %f arcsec radius' % (err * 60 * 60))
-	logger.log('matching: %6d naive possibilities' % numpy.product([len(t) for t in tables]))
+	logger.log('matching: %6d naive possibilities' % numpy.prod([len(t) for t in tables]))
 
 	logger.log('matching: hashing')
 
